@@ -1,0 +1,156 @@
+Part 1: Core Data Structures and Setup
+
+Goal: Build the foundation.
+
+Requirements:
+
+Define a Song struct that holds:
+
+char title[100]
+
+char artist[100]
+
+int duration (in seconds)
+
+Define a Node struct representing a doubly linked list node:
+
+Song song;
+
+struct Node *next;
+
+struct Node *prev;
+
+Write a function to create a new node dynamically given a Song.
+
+Write a displaySong(Song s) helper function to print one song’s details.
+
+Concepts tested: struct composition, dynamic memory allocation, modular design.
+
+
+
+🎶 Part 2: Basic Playlist Operations
+
+Goal: Implement basic linked list functionality.
+
+Requirements:
+
+Add Song
+
+Append a song to the end of the list.
+
+If the list is empty, the new node becomes the head.
+
+Display Playlist
+
+Print all songs in order.
+
+Print a message if the list is empty.
+
+Delete Song
+
+Remove a song by title (case-sensitive or not — your choice).
+
+Handle removing the first node, middle node, or last node.
+
+Free memory properly.
+
+Free Playlist
+
+Release all allocated nodes before exiting.
+
+Concepts tested: pointer manipulation, traversal, malloc/free, edge cases.
+
+⏭️ Part 3: Navigation and Playback
+
+Goal: Simulate playback navigation through the list.
+
+Requirements:
+
+Maintain a pointer Node *current representing the currently playing song.
+
+Add commands to:
+
+Play Next: move to current->next if it exists.
+
+Play Previous: move to current->prev if it exists.
+
+Show Current Song: print info of the current node.
+
+Handle cases where:
+
+The list is empty.
+
+current is at the first or last song.
+
+Concepts tested: maintaining internal state, double links, boundary conditions.
+
+🔄 Part 4: Advanced Playlist Features
+
+Goal: Add more realistic and algorithmically interesting features.
+
+Choose at least two of the following to implement:
+
+Shuffle Playlist
+
+Randomize the order of the nodes.
+
+You may rebuild the list or swap song data between nodes.
+
+Sort Playlist
+
+Sort by title, artist, or duration (your choice).
+
+Use any algorithm (bubble sort on linked list is fine).
+
+Search Songs
+
+Find all songs containing a given substring in their title or artist.
+
+Return a new list or print results.
+
+Circular Playback
+
+Modify the list so tail->next = head and head->prev = tail.
+
+When reaching the end, loop back to start (and vice versa).
+
+Concepts tested: algorithm design on linked structures, pointer rewiring, working with random numbers and strings.
+
+💾 Part 5: File Persistence (Optional Bonus)
+
+Goal: Save and restore playlist state.
+
+Requirements:
+
+Save Playlist to File
+
+Write all songs to a text file (e.g., playlist.txt).
+
+Each line contains title,artist,duration.
+
+Load Playlist from File
+
+Read the file on startup to reconstruct the list.
+
+Concepts tested: file I/O, parsing strings, reconstructing linked data from storage.
+
+🧮 Part 6: Menu-Driven Interface
+
+Goal: Tie everything together in main.c.
+
+Requirements:
+Create an interactive loop with options like:
+
+=== Music Playlist Manager ===
+1. Add Song
+2. Delete Song
+3. Display Playlist
+4. Play Next
+5. Play Previous
+6. Show Current
+7. Shuffle Playlist
+8. Sort Playlist
+9. Save & Exit
+
+
+Concepts tested: program structure, user input, modular separation between UI and logic.
